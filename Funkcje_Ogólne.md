@@ -25,7 +25,7 @@
 - Modyfikacja danych użytkowników i zadań
 - Rejestracja nowych użytkowników
 - Sprawdzanie statusów i raportów
-- Przydzielanie obowiązków pracownikom (
+- Przydzielanie obowiązków pracownikom 
 
 ### 3. **Weterynarz**:
 - Modyfikacja danych medycznych i zadań
@@ -69,16 +69,17 @@
 1. Rejestracja danych biometrycznych zwierzęcia
 2. Rejestracja stanu zdrowia zwierzęcia
 3. Rejestracja nakarmienia zwierzęcia
+4. Rejestracja danych inspekcji zagrody
 
-4. Sprawdzanie historii karmienia zwierzęcia
-5. Sprawdzanie historii inspekcji zagrody
-6. Sprawdzanie historii stanu zdrowia zwierzęcia
-7. Sprawdzanie historii danych biometrycznych zwierzęcia
+5. Sprawdzanie historii karmienia zwierzęcia
+6. Sprawdzanie historii inspekcji zagrody
+7. Sprawdzanie historii stanu zdrowia zwierzęcia
+8. Sprawdzanie historii danych biometrycznych zwierzęcia
 
-8. Modyfikacja historii karmienia zwierzęcia
-9. Modyfikacja historii inspekcji zagrody
-10. Modyfikacja historii stanu zdrowia zwierzęcia
-11. Modyfikacja historii danych biometrycznych zwierzęcia
+9. Modyfikacja historii karmienia zwierzęcia
+10. Modyfikacja historii inspekcji zagrody
+11. Modyfikacja historii stanu zdrowia zwierzęcia
+12. Modyfikacja historii danych biometrycznych zwierzęcia
 
 ---
 
