@@ -2,7 +2,7 @@
 Wszystkie przydatne notatki i to-do listy 
 
 
-TO-DO lista znajduje sie w [TO-DO-LIST](ProjectNotes/TO-DO-LIST.md)
+TO-DO lista znajduje sie w [TO-DO-LIST](Funkcje_Specyfikacja.md)
 
 # Specyfikacja Moduły
-1. Funkcjonalność [Funkcje Produktu](ProjectNotes/Funkcje_Specyfikacja.md)
+1. Funkcjonalność [Funkcje Produktu](Funkcje_Specyfikacja.md)
