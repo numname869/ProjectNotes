@@ -1,6 +1,6 @@
-# Zarządzanie użytkownikami
+### Zarządzanie użytkownikami
 
-## OGÓLNE:
+### OGÓLNE:
 1. Tworzenie konta użytkownika
 2. Logowanie użytkownika
 3. Wylogowanie użytkownika
