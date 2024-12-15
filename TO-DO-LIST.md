@@ -9,8 +9,7 @@
 
 ## Zadania do wykonania poza specyfikacją:
 - [ ] Przykładowy projekt interfejsu użytkownika
-- [ ] 
+- [ ] Przkładowy wygląd raportu
 
-## Notatki:
-- Pamiętaj o dodaniu dokumentacji API
-- Sprawdzić dostępność zewnętrznych bibliotek
+
+
