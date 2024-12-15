@@ -25,7 +25,7 @@
 - Modyfikacja danych użytkowników i zadań
 - Rejestracja nowych użytkowników
 - Sprawdzanie statusów i raportów
-- Przydzielanie obowiązków pracownikom
+- Przydzielanie obowiązków pracownikom (
 
 ### 3. **Weterynarz**:
 - Modyfikacja danych medycznych i zadań
