@@ -61,7 +61,7 @@
 ---
 
 ## Alarmy
-- Użytkownik logując się do swojego konta, ma możliwość sprawdzenia alertów
+- Użytkownik logując się do swojego konta, ma możliwość sprawdzenia alertów (o stanie zdrowia lub o niewykonanych obowiązkach)
 
 ---
 
