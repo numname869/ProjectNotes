@@ -10,4 +10,4 @@ TO-DO lista znajduje sie w [TO-DO-LIST](TO-DO-LIST.md)
 3.  [Linki do schematów](Linki_do_schematów.md)
 4.  [Lista zmian specyfikacji](Lista_zmian.md)
 5.  [Technologie](Technologie_Ogólnie)
-6. 
+   
