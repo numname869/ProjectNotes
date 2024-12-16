@@ -2,7 +2,7 @@
 # To-Do List
 
 ## Zmergowanie specyfikacji:
-- [ ] ostateczny wybór technologi
+- [x] ostateczny wybór technologi
 - [ ] ostateczny projekt baz danych
 - [ ] ostateczny wybór funkcji
 - [ ] jaki template dokumentu przyjąć (spis treści)
