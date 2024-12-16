@@ -5,7 +5,9 @@
 - [ ] ostateczny wybór technologi
 - [ ] ostateczny projekt baz danych
 - [ ] ostateczny wybór funkcji
-
+- [ ] jaki template dokumentu przyjąć (spis treści)
+- [ ] dodanie charakerystyki użytkowników
+- [ ] przypadki użycia schemat zmienić
 
 ## Zadania do wykonania poza specyfikacją:
 - [ ] Przykładowy projekt interfejsu użytkownika
