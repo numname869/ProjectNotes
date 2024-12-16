@@ -1,0 +1,7 @@
+wyświetlić historię?(pracownika lub daty lub obowiązku)
+t/n
+1.T002_O012_2024_12_11_(task 002 - karmienie papug czy coś ||| opiekun-012 i na końcu data )
+2.T001_K001_2024_12_11_(task 001 - przypisanie nagłych tasków reszcie||| kierownik-001)
+3.T062_O013_2024_12_11_(task 062 - karmienie... )
+4.T129_V015_2024_12_11_(task 129 - leczenie węzy itd. |||veterynarz-015 itd...)
+
