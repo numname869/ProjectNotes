@@ -2,5 +2,6 @@ czyli tak ogolnie : Technologie:
 ograniczamy sie do back.endu
 Baza danych: MSQL
 Komunikacja z bazą danych: EF core (żeby było łatwiej niż z Ado.Net
+Szyfrowanie danych : AES(System.Security.Cryptography)
 Testowanie: NUunit 
 Kontrola wersji: github
