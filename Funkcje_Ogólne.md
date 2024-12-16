@@ -22,7 +22,7 @@
 - Przydzielanie obowiązków pracownikom
 
 ### 2. **Kierownik**:
-- Modyfikacja danych użytkowników i zadań
+- Modyfikacja danych zadań
 - Rejestracja nowych użytkowników
 - Sprawdzanie statusów i raportów
 - Przydzielanie obowiązków pracownikom 
