@@ -4,7 +4,7 @@
 ## Zmergowanie specyfikacji:
 - [x] ostateczny wybór technologi
 - [ ] ostateczny projekt baz danych
-- [ ] ostateczny wybór funkcji
+- [x] ostateczny wybór funkcji
 - [ ] jaki template dokumentu przyjąć (spis treści)
 - [ ] dodanie charakerystyki użytkowników
 - [ ] przypadki użycia schemat zmienić
