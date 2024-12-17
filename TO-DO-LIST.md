@@ -3,13 +3,12 @@
 
 ## Zmergowanie specyfikacji:
 - [x] ostateczny wybór technologi
-- [ ] ostateczny projekt baz danych
+- [x] ostateczny projekt baz danych
 - [x] ostateczny wybór funkcji
 - [x] Doprecyzowanie ról użytkowników
 - [x] przypadki użycia schemat zmienić
-- [ ] -Uzgodnić wygląd i strukture dokumentu
-- [ ] Zapisanie funkcji do dokumentu (bardziej ogólnie)
-- [ ] uzgodnic architekture (pewnie bedzie i tak klient-serwer)
+- [x] -Uzgodnić wygląd i strukture dokumentu
+- [x] uzgodnic architekture (pewnie bedzie i tak klient-serwer)
 
 
 ## Zadania do wykonania poza specyfikacją:
