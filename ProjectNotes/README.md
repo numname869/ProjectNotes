@@ -9,5 +9,5 @@ TO-DO lista znajduje sie w [TO-DO-LIST](TO-DO-LIST.md)
 2.  [Linki do schematów](Linki_do_schematów.md)
 3.  [Lista zmian specyfikacji](Lista_zmian.md)
 4.  [Technologie](Technologie_Ogólnie)
-5.  Do pobrania specyfikacja : [plik docx](S_IO2.doxc) [plik pdf](S_IO2.pdf)
+
    
