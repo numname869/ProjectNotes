@@ -1,0 +1,17 @@
+CREATE TABLE konta (
+    IDKonta INT PRIMARY KEY,            
+    IDPracownika INT,      --pozniej foreign key             
+    TypKonta VARCHAR(255),              
+    Login VARCHAR(255),                 
+    Hasło VARCHAR(255),                
+    OstatnieLogowanie DATETIME          
+);
+
+
+INSERT INTO konta (IDKonta, IDPracownika, TypKonta, Login, Hasło, OstatnieLogowanie)
+VALUES 
+(1, 101, 'Admin', 'admin_user', 'password123', '2025-01-02 08:30:00'),
+(2, 102, 'Standard', 'employee_user', 'password456', '2025-01-02 09:00:00');
+
+
+SELECT * FROM konta;
