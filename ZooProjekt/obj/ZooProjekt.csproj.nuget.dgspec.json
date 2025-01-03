@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\ZooProjekt\\ZooProjekt.csproj": {}
+    "C:\\Users\\Venatrix\\Source\\Repos\\numname869\\ProjectNotes\\ZooProjekt\\ZooProjekt.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\ZooProjekt\\ZooProjekt.csproj": {
+    "C:\\Users\\Venatrix\\Source\\Repos\\numname869\\ProjectNotes\\ZooProjekt\\ZooProjekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\ZooProjekt\\ZooProjekt.csproj",
+        "projectUniqueName": "C:\\Users\\Venatrix\\Source\\Repos\\numname869\\ProjectNotes\\ZooProjekt\\ZooProjekt.csproj",
         "projectName": "ZooProjekt",
-        "projectPath": "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\ZooProjekt\\ZooProjekt.csproj",
-        "packagesPath": "C:\\Users\\mati6\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\ZooProjekt\\obj\\",
+        "projectPath": "C:\\Users\\Venatrix\\Source\\Repos\\numname869\\ProjectNotes\\ZooProjekt\\ZooProjekt.csproj",
+        "packagesPath": "C:\\Users\\Venatrix\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Venatrix\\Source\\Repos\\numname869\\ProjectNotes\\ZooProjekt\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mati6\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Venatrix\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,30 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "NUnit": {
-              "target": "Package",
-              "version": "[4.3.2, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -74,12 +50,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
