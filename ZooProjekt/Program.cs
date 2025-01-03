@@ -5,25 +5,8 @@ using System.ComponentModel.DataAnnotations;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace ZooProjekt
 {
-    public class AnimalCareContext : DbContext
-    {
-        public DbSet<Konta> Konta { get; set; }
-        
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=AnimalCareDB;Integrated Security=True;Encrypt=False");
-        }
-    }
-    public class Konta //entity
-    {
-        [Key]
-        public int IDKonta { get; set; } //primary key
-        public int IDPracownika { get; set; } //foreign key
-        public string TypKonta { get; set; }
-        public string Login { get; set; }
-        public string Hasło { get; set; }
-        public DateTime OstatnieLogowanie { get; set; }
-    }
+  
+    
     internal class Program
     {
         static void Main(string[] args)
