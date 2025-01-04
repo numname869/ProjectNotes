@@ -60,6 +60,68 @@ namespace ZooProjekt
             Console.Write("Wybierz opcję: ");
         }
 
+        static void UserManagementMenu()
+        {
+            Console.WriteLine("\nZarządzanie użytkownikami:");
+            Console.WriteLine("1. Stwórz użytkownika");
+            Console.WriteLine("2. Przypisz obowiązki");
+            Console.WriteLine("3. Wyświetl obowiązki");
+            Console.WriteLine("4. Powrót do głównego menu");
+            Console.Write("Wybierz opcję: ");
+
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    ClearScreen("Tworzenie nowego użytkownika...");
+                    CreateUser();
+                    break;
+                case "2":
+                    ClearScreen("Przypisywanie obowiązków...");
+                    AssignDuties();
+                    break;
+                case "3":
+                    ClearScreen("Wyświetlanie obowiązków...");
+                    ViewDuties();
+                    break;
+                case "4":
+                    return;
+                default:
+                    Console.WriteLine("Nieprawidłowa opcja. Wybierz opcję ponownie.");
+                    break;
+            }
+        }
+
+        static void CreateUser()
+        {
+            Console.WriteLine("\nTworzenie nowego użytkownika...");
+            Console.Write("Podaj nazwę użytkownika: ");
+            string username = Console.ReadLine();
+
+            Console.Write("Podaj hasło: ");
+            string password = Console.ReadLine();
+
+            if (ValidateCredentials(username, password))
+            {
+                Console.WriteLine("Użytkownik został pomyślnie utworzony.");
+            }
+            else
+            {
+                Console.WriteLine("Błąd: Nieprawidłowa nazwa użytkownika lub hasło.");
+            }
+        }
+
+        static void AssignDuties()
+        {
+            Console.WriteLine("Przypisywanie obowiązków nie jest jeszcze zaimplementowane.");
+        }
+
+        static void ViewDuties()
+        {
+            Console.WriteLine("Wyświetlanie obowiązków nie jest jeszcze zaimplementowane.");
+        }
+
+
         private static void RemoveTestValues(AnimalCareContext context)
         {
             var idWhere1 = from konto in context.Konta
