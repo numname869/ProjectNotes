@@ -165,6 +165,33 @@ namespace ZooProjekt
             context.Konta.RemoveRange(idWhere1);
         }
 
+        static void ReportsMenu()
+        {
+            Console.WriteLine("\nRaporty:");
+            Console.WriteLine("1. Wygeneruj raport");
+            Console.WriteLine("2. Powrót do głównego menu");
+            Console.Write("Wybierz opcję: ");
+
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    ClearScreen("Generowanie raportu...");
+                    GenerateReport();
+                    break;
+                case "2":
+                    return;
+                default:
+                    Console.WriteLine("Nieprawidłowa opcja. Wybierz opcję ponownie.");
+                    break;
+            }
+        }
+
+        static void GenerateReport()
+        {
+            Console.WriteLine("Generowanie raportu nie jest jeszcze zaimplementowane.");
+        }
+
         private static void AddTestValue(AnimalCareContext context)
         {
             int maxID = 0;
