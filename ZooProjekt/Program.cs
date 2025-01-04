@@ -11,8 +11,26 @@ namespace ZooProjekt
     {
         static void Main(string[] args)
         {
-            AnimalCareContext context = new AnimalCareContext();
-            context.SaveChanges();
+            //   AnimalCareContext context = new AnimalCareContext();
+            //   context.SaveChanges();
+            Console.WriteLine("Witamy w Systemie Rehabilitacji Zwierząt");
+            DisplayMainMenu();
+
+
+        }
+
+        static void DisplayMainMenu()
+        {
+            Console.WriteLine("\n===============================");
+            Console.WriteLine("   System Rehabilitacji Zwierząt");
+            Console.WriteLine("===============================");
+            Console.WriteLine("1. Zarządzanie użytkownikami");
+            Console.WriteLine("2. Zarządzanie danymi o zwierzętach");
+            Console.WriteLine("3. Raporty");
+            Console.WriteLine("4. Administracja");
+            Console.WriteLine("5. Wylogowanie");
+            Console.WriteLine("===============================");
+            Console.Write("Wybierz opcję: ");
         }
 
         private static void RemoveTestValues(AnimalCareContext context)
