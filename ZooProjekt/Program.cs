@@ -192,6 +192,33 @@ namespace ZooProjekt
             Console.WriteLine("Generowanie raportu nie jest jeszcze zaimplementowane.");
         }
 
+        static void ClearScreen(string message)
+        {
+            Console.Clear();
+            Console.WriteLine(message);
+            Console.WriteLine("Powrót do menu za 5 sekund lub naciśnij Enter, aby kontynuować...");
+            if (!WaitForKeyPress(5000))
+            {
+                Console.Clear();
+            }
+        }
+
+        static bool WaitForKeyPress(int timeoutMs)
+        {
+            DateTime start = DateTime.Now;
+            while ((DateTime.Now - start).TotalMilliseconds < timeoutMs)
+            {
+                if (Console.KeyAvailable)
+                {
+                    Console.ReadKey(true); // Consume key press
+                    return true;
+                }
+                Thread.Sleep(50);
+            }
+            return false;
+        }
+
+
         private static void AddTestValue(AnimalCareContext context)
         {
             int maxID = 0;
