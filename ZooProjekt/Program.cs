@@ -121,7 +121,42 @@ namespace ZooProjekt
             Console.WriteLine("Wyświetlanie obowiązków nie jest jeszcze zaimplementowane.");
         }
 
+        static void AnimalDataManagementMenu()
+        {
+            Console.WriteLine("\nZarządzanie danymi o zwierzętach:");
+            Console.WriteLine("1. Rejestracja danych zwierzęcia");
+            Console.WriteLine("2. Wyświetl historię karmienia");
+            Console.WriteLine("3. Powrót do głównego menu");
+            Console.Write("Wybierz opcję: ");
 
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    ClearScreen("Rejestracja danych zwierzęcia...");
+                    RegisterAnimalData();
+                    break;
+                case "2":
+                    ClearScreen("Wyświetlanie historii karmienia...");
+                    ViewFeedingHistory();
+                    break;
+                case "3":
+                    return;
+                default:
+                    Console.WriteLine("Nieprawidłowa opcja. Wybierz opcję ponownie.");
+                    break;
+            }
+        }
+
+        static void RegisterAnimalData()
+        {
+            Console.WriteLine("Rejestracja danych zwierzęcia nie jest jeszcze zaimplementowana.");
+        }
+
+        static void ViewFeedingHistory()
+        {
+            Console.WriteLine("Wyświetlanie historii karmienia nie jest jeszcze zaimplementowane.");
+        }
         private static void RemoveTestValues(AnimalCareContext context)
         {
             var idWhere1 = from konto in context.Konta
