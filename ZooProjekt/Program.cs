@@ -282,6 +282,11 @@ namespace ZooProjekt
             Console.WriteLine("Generowanie raportu nie jest jeszcze zaimplementowane.");
         }
 
+        static void ModifyUserPermissions()
+        {
+            Console.WriteLine("Modyfikowanie uprawnień użytkownika nie jest jeszcze zaimplementowane.");
+        }
+
         private static void AddTestValue(AnimalCareContext context)
         {
             int maxID = 0;
