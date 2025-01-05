@@ -267,6 +267,15 @@ namespace ZooProjekt
             Console.WriteLine("Wyświetlanie obowiązków nie jest jeszcze zaimplementowane.");
         }
 
+        static void RegisterAnimalData()
+        {
+            Console.WriteLine("Rejestracja danych zwierzęcia nie jest jeszcze zaimplementowana.");
+        }
+
+        static void ViewFeedingHistory()
+        {
+            Console.WriteLine("Wyświetlanie historii karmienia nie jest jeszcze zaimplementowane.");
+        }
 
 
         private static void AddTestValue(AnimalCareContext context)
