@@ -277,6 +277,10 @@ namespace ZooProjekt
             Console.WriteLine("Wyświetlanie historii karmienia nie jest jeszcze zaimplementowane.");
         }
 
+        static void GenerateReport()
+        {
+            Console.WriteLine("Generowanie raportu nie jest jeszcze zaimplementowane.");
+        }
 
         private static void AddTestValue(AnimalCareContext context)
         {
