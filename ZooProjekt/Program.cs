@@ -218,6 +218,28 @@ namespace ZooProjekt
             return false;
         }
 
+        static bool LoginUser()
+        {
+            Console.Write("Podaj login: ");
+            string username = Console.ReadLine();
+
+            Console.Write("Podaj hasło: ");
+            string password = Console.ReadLine();
+
+            return ValidateCredentials(username, password);
+        }
+
+        static bool ValidateCredentials(string username, string password)
+        {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                return false;
+
+            // Placeholder for actual validation logic.
+            return username == "admin" && password == "password";
+        }
+
+
+
 
         private static void AddTestValue(AnimalCareContext context)
         {
