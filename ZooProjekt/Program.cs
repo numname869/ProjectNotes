@@ -238,6 +238,34 @@ namespace ZooProjekt
             return username == "admin" && password == "password";
         }
 
+        static void CreateUser()
+        {
+            Console.WriteLine("\nTworzenie nowego użytkownika...");
+            Console.Write("Podaj nazwę użytkownika: ");
+            string username = Console.ReadLine();
+
+            Console.Write("Podaj hasło: ");
+            string password = Console.ReadLine();
+
+            if (ValidateCredentials(username, password))
+            {
+                Console.WriteLine("Użytkownik został pomyślnie utworzony.");
+            }
+            else
+            {
+                Console.WriteLine("Błąd: Nieprawidłowa nazwa użytkownika lub hasło.");
+            }
+        }
+
+        static void AssignDuties()
+        {
+            Console.WriteLine("Przypisywanie obowiązków nie jest jeszcze zaimplementowane.");
+        }
+
+        static void ViewDuties()
+        {
+            Console.WriteLine("Wyświetlanie obowiązków nie jest jeszcze zaimplementowane.");
+        }
 
 
 
