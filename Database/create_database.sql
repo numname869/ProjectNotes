@@ -1,0 +1,22 @@
+USE [master]
+GO
+CREATE DATABASE [AnimalCareDB]
+CONTAINMENT = NONE
+ON  PRIMARY 
+(
+    NAME = N'AnimalCareDB', 
+    FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\AnimalCareDB.mdf', 
+    SIZE = 8192KB, 
+    MAXSIZE = UNLIMITED, 
+    FILEGROWTH = 65536KB 
+)
+LOG ON 
+(
+    NAME = N'AnimalCareDB_log', 
+    FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\AnimalCareDB_log.ldf', 
+    SIZE = 8192KB, 
+    MAXSIZE = 2048GB, 
+    FILEGROWTH = 65536KB 
+)
+WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+GO
