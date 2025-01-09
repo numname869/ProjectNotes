@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "CCtobYaU0DzVypJ4MNIr1QGE4Ijibx4+Xj2p3WcjdovQox2H0WpSbaWnl666oXxRYEixb4DlKiv6pkTUcxxe1A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tira3\\source\\repos\\ProjectNotes\\zooklientserver\\ZooClient\\ZooClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tira3\\.nuget\\packages\\system.io.pipelines\\9.0.0\\system.io.pipelines.9.0.0.nupkg.sha512",
+    "C:\\Users\\tira3\\.nuget\\packages\\system.net.http.json\\9.0.0\\system.net.http.json.9.0.0.nupkg.sha512",
+    "C:\\Users\\tira3\\.nuget\\packages\\system.text.encodings.web\\9.0.0\\system.text.encodings.web.9.0.0.nupkg.sha512",
+    "C:\\Users\\tira3\\.nuget\\packages\\system.text.json\\9.0.0\\system.text.json.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
