@@ -6,7 +6,7 @@ CREATE DATABASE [AnimalCareDB]
  ON  PRIMARY 
 ( NAME = N'AnimalCareDB', FILENAME = N'F:\MSQL\MSSQL16.MSSQLSERVER\MSSQL\DATA\AnimalCareDB.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
  LOG ON 
-( NAME = N'AnimalCareDB_log', FILENAME = N'F:\MSQL\MSSQL16.MSSQLSERVER\MSSQL\DATA\AnimalCareDB_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+( NAME = N'AnimalCareDB_log', FILENAME = N'F:\MSQL\MSSQL16.MSSQLSERVER\MSSQL\DATA\AnimalCareDB_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB ) --change path if your MSQL server is somewhere else
  WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
 GO
 ALTER DATABASE [AnimalCareDB] SET COMPATIBILITY_LEVEL = 160
@@ -168,7 +168,7 @@ CREATE TABLE [dbo].[Konta](
 	[IDPracownika] [int] NULL,
 	[TypKonta] [varchar](255) NULL,
 	[Login] [varchar](255) NULL,
-	[Has�o] [varchar](255) NULL,
+	[Hasło] [varchar](255) NULL,
 	[OstatnieLogowanie] [datetime] NULL,
 PRIMARY KEY CLUSTERED 
 (
