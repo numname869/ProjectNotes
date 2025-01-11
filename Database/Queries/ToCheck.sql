@@ -14,8 +14,4 @@ ELSE
     SELECT 'FALSE' AS LoginPasswordMatch;
 
 
--- querries in c#
 
-SqlCommand command = new SqlCommand("SELECT 1 FROM Konta WHERE Login = @Login AND [Hasło] = @Password", connection)
-
-SqlCommand command = new SqlCommand("SELECT 1 FROM Konta WHERE Login = @Login", connection)
