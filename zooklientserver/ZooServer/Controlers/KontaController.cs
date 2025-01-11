@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ZooServer.Data;
 using ZooServer.Models;
 using System.Collections.Generic;
 using System.Linq;

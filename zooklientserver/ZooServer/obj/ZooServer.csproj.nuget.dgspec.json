@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tira3\\source\\repos\\ProjectNotes\\zooklientserver\\ZooServer\\ZooServer.csproj": {}
+    "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\zooklientserver\\ZooServer\\ZooServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tira3\\source\\repos\\ProjectNotes\\zooklientserver\\ZooServer\\ZooServer.csproj": {
+    "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\zooklientserver\\ZooServer\\ZooServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tira3\\source\\repos\\ProjectNotes\\zooklientserver\\ZooServer\\ZooServer.csproj",
+        "projectUniqueName": "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\zooklientserver\\ZooServer\\ZooServer.csproj",
         "projectName": "ZooServer",
-        "projectPath": "C:\\Users\\tira3\\source\\repos\\ProjectNotes\\zooklientserver\\ZooServer\\ZooServer.csproj",
-        "packagesPath": "C:\\Users\\tira3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tira3\\source\\repos\\ProjectNotes\\zooklientserver\\ZooServer\\obj\\",
+        "projectPath": "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\zooklientserver\\ZooServer\\ZooServer.csproj",
+        "packagesPath": "C:\\Users\\mati6\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\zooklientserver\\ZooServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\tira3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mati6\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -39,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -48,6 +53,12 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
@@ -81,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

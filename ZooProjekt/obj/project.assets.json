@@ -2809,23 +2809,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tira3\\.nuget\\packages\\": {},
+    "C:\\Users\\mati6\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tira3\\Source\\Repos\\ProjectNotes\\ZooProjekt\\ZooProjekt.csproj",
+      "projectUniqueName": "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\ZooProjekt\\ZooProjekt.csproj",
       "projectName": "ZooProjekt",
-      "projectPath": "C:\\Users\\tira3\\Source\\Repos\\ProjectNotes\\ZooProjekt\\ZooProjekt.csproj",
-      "packagesPath": "C:\\Users\\tira3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tira3\\Source\\Repos\\ProjectNotes\\ZooProjekt\\obj\\",
+      "projectPath": "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\ZooProjekt\\ZooProjekt.csproj",
+      "packagesPath": "C:\\Users\\mati6\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mati6\\OneDrive\\Pulpit\\School\\IO\\Laboratoria\\ZooProjekt\\ZooProjekt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\tira3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mati6\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2847,6 +2847,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2878,7 +2883,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
