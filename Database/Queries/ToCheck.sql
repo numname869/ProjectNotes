@@ -12,3 +12,10 @@ IF EXISTS (SELECT 1 FROM Konta WHERE Login = @LoginToCheck AND [Hasło] = @Passw
     SELECT 'TRUE' AS LoginPasswordMatch
 ELSE
     SELECT 'FALSE' AS LoginPasswordMatch;
+
+
+-- querries in c#
+
+SqlCommand command = new SqlCommand("SELECT 1 FROM Konta WHERE Login = @Login AND [Hasło] = @Password", connection)
+
+SqlCommand command = new SqlCommand("SELECT 1 FROM Konta WHERE Login = @Login", connection)
