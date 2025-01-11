@@ -11,5 +11,9 @@ namespace ZooServer.Models {
         public DateTime DataKarmienia { get; set; }
         public string RodzajKarmy { get; set; }
         public float IlośćKarmy { get; set; }
+
+        public override string ToString() {
+            return "";
+        }
     }
 }

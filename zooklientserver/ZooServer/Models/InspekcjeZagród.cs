@@ -12,5 +12,10 @@ namespace ZooServer.Models {
         public string WynikInspekcji { get; set; }
         public string Opis { get; set; }
         public string Zalecenia { get; set; }
+
+        //todo
+        public override string ToString() {
+            return "";
+        }
     }
 }
