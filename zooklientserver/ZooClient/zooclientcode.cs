@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 class Program
 {
-    private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5000/api/") };
+    private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5134/api/") };
     private static int userId = 0;
+    private static string userRole = "";
 
     static async Task Main()
     {
@@ -31,7 +32,7 @@ class Program
                 case "3":
                     return;
                 default:
-                    Console.WriteLine("Nieprawidłowa opcja, spróbuj ponownie.");
+                    Console.WriteLine("❌ Nieprawidłowa opcja, spróbuj ponownie.");
                     break;
             }
         }
@@ -39,25 +40,33 @@ class Program
 
     private static async Task Login()
     {
-        // string login = "admin";  // Domyślny login
-      //  string haslo = "password";  // Domyślne hasło
-        Console.Write("\nPodaj login: ");
+        Console.Write("\n🔑 Podaj login: ");
         string login = Console.ReadLine();
-        Console.Write("Podaj hasło: ");
+        Console.Write("🔒 Podaj hasło: ");
         string haslo = Console.ReadLine();
 
-        var request = new { Login = login, Hasło = haslo };
-        HttpResponseMessage response = await client.PostAsJsonAsync("konta/login", request);
+        var request = new { Login = login, Haslo = haslo };
 
-        if (response.IsSuccessStatusCode)
+        try
         {
-            var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
-            userId = result.IDKonta;
-            Console.WriteLine("\n✅ Zalogowano pomyślnie! Twój ID: " + userId);
+            HttpResponseMessage response = await client.PostAsJsonAsync("konta/login", request);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
+                userId = result.IDKonta;
+                userRole = result.TypKonta;
+
+                Console.WriteLine($"\n✅ Zalogowano pomyślnie! Twój ID: {userId}, Rola: {userRole}");
+            }
+            else
+            {
+                Console.WriteLine("\n❌ Błąd logowania. Sprawdź dane.");
+            }
         }
-        else
+        catch (Exception ex)
         {
-            Console.WriteLine("\n❌ Błąd logowania. Sprawdź dane.");
+            Console.WriteLine($"❌ Błąd połączenia z serwerem: {ex.Message}");
         }
     }
 
@@ -69,16 +78,23 @@ class Program
             return;
         }
 
-        HttpResponseMessage response = await client.GetAsync($"konta/protected/{userId}");
+        try
+        {
+            HttpResponseMessage response = await client.GetAsync($"konta/protected/{userId}");
 
-        if (response.IsSuccessStatusCode)
-        {
-            string content = await response.Content.ReadAsStringAsync();
-            Console.WriteLine("\n✅ Odpowiedź serwera: " + content);
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"\n✅ Odpowiedź serwera: {content}");
+            }
+            else
+            {
+                Console.WriteLine("\n❌ Brak dostępu. Może ID jest nieprawidłowe?");
+            }
         }
-        else
+        catch (Exception ex)
         {
-            Console.WriteLine("\n❌ Brak dostępu. Może ID jest nieprawidłowe?");
+            Console.WriteLine($"❌ Błąd połączenia z serwerem: {ex.Message}");
         }
     }
 }
