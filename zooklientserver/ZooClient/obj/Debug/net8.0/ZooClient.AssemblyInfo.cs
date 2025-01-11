@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("ZooServer")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ZooClient")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e44b80827ba46ec0aef245f69e63a0d44505b30b")]
-[assembly: System.Reflection.AssemblyProductAttribute("ZooServer")]
-[assembly: System.Reflection.AssemblyTitleAttribute("ZooServer")]
+[assembly: System.Reflection.AssemblyProductAttribute("ZooClient")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ZooClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Wygenerowane przez klasę WriteCodeFragment programu MSBuild.
