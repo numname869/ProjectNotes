@@ -7,3 +7,7 @@
 /.vs/ProjectNotes/FileContentIndex/98e38b23-1a4b-4769-bbb1-b1479230e17b.vsidx
 /.vs/ProjectNotes/FileContentIndex/4ea5c4ec-3fd2-4ae6-8970-4154b7ef970d.vsidx
 *.vsidx
+/ZooProjekt/obj/Release/net8.0/ZooProjekt.AssemblyInfo.cs
+/ZooProjekt/obj/Release/net8.0/ZooProjekt.AssemblyInfoInputs.cache
+/ZooProjekt/obj/Debug/net8.0/ZooProjekt.AssemblyInfo.cs
+/ZooProjekt/obj/Debug/net8.0/ZooProjekt.AssemblyInfoInputs.cache
