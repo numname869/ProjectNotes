@@ -9,8 +9,12 @@ namespace ZooServer.Models {
         public string TypHistorii { get; set; }
         public DateTime DataPoczątku { get; set; }
         public DateTime DataZakończenia { get; set; }
-        public int Okres { get; set; }
-        public string Status { get; set; }
+        public DateTime DataPrzeterminowania { get; set; }
         public string Opis { get; set; }
+
+
+        public override string ToString() {
+            return "";
+        }
     }
 }
