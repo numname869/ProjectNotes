@@ -9,7 +9,7 @@ namespace ZooServer.Accessors {
         public static string[] ALLOWED_TYPES = { "InspekcjeZagród", "InspekcjeZdrowia", "Karmienia" };
 
         AnimalCareContext db;
-        public DataGetter(AnimalCareContext db) { this.db = db; }
+        public DataGetter(AnimalCareContext db) {this.db = db; }
 
         public Konta FindAccount(string login) {
             var accounts = (from Konta konto in db.Konta
@@ -18,66 +18,63 @@ namespace ZooServer.Accessors {
             return accounts[0];
         }
 
-        //todo
-        public List<string> FindCompleted(string TypHistorii, int IDPracownika = -1) {
+        public List<Obowiązki> FindCompleted() {
 
+            var query = from obowiązek in db.Obowiązki
+                        where obowiązek.DataZakończenia != null
+                        select obowiązek;
+
+            return query.ToList();
+        }
+
+
+        public List<Karmienia> MapToKarmienia(List<Obowiązki> obowiązki) {
+            DbSet<Karmienia> karmienia = db.Karmienia;
+            var history = from obowiązek in obowiązki
+                                   join karmienie in karmienia on obowiązek.IDObowiązku equals karmienie.IDObowiązku
+                                   select karmienie;
+            return history.ToList();
+        }
+
+        public List<InspekcjeZagród> MapToInspekcjeZagród(List<Obowiązki> obowiązki) {
+            DbSet<InspekcjeZagród> inspekcje = db.InspekcjeZagród;
+            var history = from obowiązek in obowiązki
+                                   join inspekcja in inspekcje on obowiązek.IDObowiązku equals inspekcja.IDObowiązku
+                                   select inspekcja;
+            return history.ToList();
+        }
+
+        public List<InspekcjeZdrowia> MapToInspekcjeZdrowia(List<Obowiązki> obowiązki) {
+            DbSet<InspekcjeZdrowia> inspekcje = db.InspekcjeZdrowia;
+            var history = from obowiązek in obowiązki
+                          join inspekcja in inspekcje on obowiązek.IDObowiązku equals inspekcja.IDObowiązku
+                          select inspekcja;
+            return history.ToList();
+        }
+
+        public List<Obowiązki> FindByDate(List<Obowiązki> obowiązki, DateTime Date1, DateTime Date2) {
+            var obow = from Obowiązki obowiązek in obowiązki
+                       where obowiązek.DataZakończenia != null && obowiązek.DataZakończenia >= Date1 && obowiązek.DataZakończenia < Date2
+                       select obowiązek;
+            return obow.ToList();
+        }
+
+        public List<Obowiązki> FindByPracownik(List<Obowiązki> obowiązki, int IDPracownika) {
+            var obow = from obowiązek in obowiązki
+                       where obowiązek.IDPracownika == IDPracownika
+                       select obowiązek;
+            return obow.ToList();
+        }
+
+        public List<string> History(string TypHistorii, int ID = -1)
+        {
 
             if (!ALLOWED_TYPES.Contains(TypHistorii))
             {
                 throw new ArgumentException("Typ historii jest nieprawidłowy.");
             }
 
-            var query = from obowiązek in db.Obowiązki
-                        where Obowiązki.TypHistorii == TypHistorii && Obowiązki.DataZakończenia != null
-                        select Obowiązki
-
-
-               if (IDPracownika != -1)
-            {
-                query = query.Where(o => o.IDPracownika == IDPracownika);
-            }
-
-            return query.ToList();
-
-
-         
-        }
-
-        public List<string> HistoryWithRange( String TypHistori , String TypId, int ID = -1, DateTime Date1, DateTime Date2)
-        {
-            if (!ALLOWED_TYPES.Contains(TypHistori))
-            {
-                throw new ArgumentException("Typ historii jest nieprawidłowy.");
-            }
-
-            Type entityType = Type.GetType($"ZooServer.Models.{TypHistori}");
-
-            if (entityType == null)
-            {
-                throw new ArgumentException("Nie znaleziono typu dla tej historii.");
-            }
-
-            var query = db.Set(entityType).AsQueryable();
-
-            query = query.Where("TypId == @0 && Data >= @1 && Data <= @2", TypId, Date1, Date2);
-
-
-
-            return query.ToList().Select(x => x.ToString()).ToList();
-
-
-
-        }
-
-        public List<string> History(string TypID, int ID = -1)
-        {
-
-            if (!ALLOWED_TYPES.Contains(TypID))
-            {
-                throw new ArgumentException("Typ historii jest nieprawidłowy.");
-            }
-
-            Type entityType = Type.GetType($"ZooServer.Models.{TypID}");
+            Type entityType = Type.GetType($"ZooServer.Models.{TypHistorii}");
 
             var query = db.Set(entityType).AsQueryable();
 
@@ -99,8 +96,7 @@ namespace ZooServer.Accessors {
     }
 
 
-=======
->>>>>>> 4f41559f4230931dd74de9b4bb20e4de4636c43a
+
     internal class Testing {
         static void Main(string[] args) {
             AnimalCareContext db = new AnimalCareContext();

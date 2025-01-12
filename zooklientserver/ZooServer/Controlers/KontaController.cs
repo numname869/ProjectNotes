@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ZooServer.Data;
 using ZooServer.Models;
 using System.Collections.Concurrent;
 using System.Linq;
