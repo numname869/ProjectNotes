@@ -8,4 +8,10 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ZooProjekt
+<<<<<<<< HEAD:ZooProjekt/obj/Debug/net8.0/ZooProjekt.GeneratedMSBuildEditorConfig.editorconfig
 build_property.ProjectDir = C:\Users\Venatrix\source\repos\numname869\ProjectNotes\ZooProjekt\
+========
+build_property.ProjectDir = C:\Users\tira3\Source\Repos\ProjectNotes\ZooProjekt\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+>>>>>>>> origin/konta-test:ZooProjekt/obj/Release/net8.0/ZooProjekt.GeneratedMSBuildEditorConfig.editorconfig
