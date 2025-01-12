@@ -1,6 +1,5 @@
 ﻿using ZooServer.Models;
 using Microsoft.EntityFrameworkCore;
-using ZooServer.Models;
 
 
 namespace ZooServer.Accessors {
@@ -18,29 +17,27 @@ namespace ZooServer.Accessors {
             return accounts[0];
         }
 
-        public List<Obowiązki> FindCompleted() {
-
-            var query = from obowiązek in db.Obowiązki
+        public List<Obowiązki> FindCompleted(List<Obowiązki> obowiązki) {
+            var query = from obowiązek in obowiązki
                         where obowiązek.DataZakończenia != null
                         select obowiązek;
 
             return query.ToList();
         }
 
-
         public List<Karmienia> MapToKarmienia(List<Obowiązki> obowiązki) {
             DbSet<Karmienia> karmienia = db.Karmienia;
             var history = from obowiązek in obowiązki
-                                   join karmienie in karmienia on obowiązek.IDObowiązku equals karmienie.IDObowiązku
-                                   select karmienie;
+                          join karmienie in karmienia on obowiązek.IDObowiązku equals karmienie.IDObowiązku
+                          select karmienie;
             return history.ToList();
         }
 
         public List<InspekcjeZagród> MapToInspekcjeZagród(List<Obowiązki> obowiązki) {
             DbSet<InspekcjeZagród> inspekcje = db.InspekcjeZagród;
             var history = from obowiązek in obowiązki
-                                   join inspekcja in inspekcje on obowiązek.IDObowiązku equals inspekcja.IDObowiązku
-                                   select inspekcja;
+                          join inspekcja in inspekcje on obowiązek.IDObowiązku equals inspekcja.IDObowiązku
+                          select inspekcja;
             return history.ToList();
         }
 
@@ -66,33 +63,6 @@ namespace ZooServer.Accessors {
             return obow.ToList();
         }
 
-        public List<string> History(string TypHistorii, int ID = -1)
-        {
-
-            if (!ALLOWED_TYPES.Contains(TypHistorii))
-            {
-                throw new ArgumentException("Typ historii jest nieprawidłowy.");
-            }
-
-            Type entityType = Type.GetType($"ZooServer.Models.{TypHistorii}");
-
-            var query = db.Set(entityType).AsQueryable();
-
-            if (ID != -1)
-            {
-                query = query.Where("IdZwierzęcia == @0", ID);
-            }
-
-
-
-            return query.ToList().Select(x => x.ToString()).ToList();
-
-
-        }
-
-
-
-
     }
 
 
@@ -101,6 +71,7 @@ namespace ZooServer.Accessors {
         static void Main(string[] args) {
             AnimalCareContext db = new AnimalCareContext();
             DataGetter test = new DataGetter(db);
+            db.Zwierzęta.
 
         }
     }

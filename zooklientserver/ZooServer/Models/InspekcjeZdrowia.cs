@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ZooServer.Models {
     public class InspekcjeZdrowia {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDInspekcjiZdrowia { get; set; }
         [ForeignKey("Zwierzęta")]
         public int IDZwierzęcia { get; set; }

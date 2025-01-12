@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ZooServer.Models {
     public class Pracownicy {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDPracownika { get; set; }
         public string Imię { get; set; }
         public string Nazwisko { get; set; }

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ZooServer.Models
 {
     public class Konta
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDKonta { get; set; } // Klucz główny
 
         public int IDPracownika { get; set; } // Powiązanie z pracownikiem
