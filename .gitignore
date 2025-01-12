@@ -1,7 +1,8 @@
 .vs
 zooklientserver/ZooClient/.vs
-zooklientserver/ZooClient/bin
 zooklientserver/ZooClient/obj
-zooklientserver/ZooServer/bin
+zooklientserver/ZooClient/bin
+
 zooklientserver/ZooServer/.vs
 zooklientserver/ZooServer/obj
+zooklientserver/ZooServer/bin
