@@ -1,5 +1,6 @@
 ﻿using ZooServer.Models;
 using Microsoft.EntityFrameworkCore;
+using ZooServer.Models;
 
 
 namespace ZooServer.Accessors {
@@ -21,7 +22,13 @@ namespace ZooServer.Accessors {
         public List<string> FindCompleted(string TypHistorii, int IDPracownika = -1) {
             return null;
         }
+    }
 
-        
+    internal class Testing {
+        static void Main(string[] args) {
+            AnimalCareContext db = new AnimalCareContext();
+            DataGetter test = new DataGetter(db);
+
+        }
     }
 }

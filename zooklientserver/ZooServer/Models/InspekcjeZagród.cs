@@ -13,6 +13,7 @@ namespace ZooServer.Models {
         public string Opis { get; set; }
         public string Zalecenia { get; set; }
 
+
         public override string ToString() {
             return "ID zagrody: "+IDZagrody+", Data inspekcji: "+DataInspekcji+", Wynik: "+WynikInspekcji;
         }
