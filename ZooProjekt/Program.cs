@@ -15,9 +15,22 @@ namespace ZooProjekt
     }
 class Application
 {
+    private UserManagementFacade userManagement = new UserManagementFacade();
+
     public void Run()
     {
-        // Placeholder for application loop
+        while (true)
+        {
+            Console.Clear();
+            if (!userManagement.IsUserLoggedIn())
+            {
+                userManagement.ShowLoginMenu();
+            }
+            else
+            {
+                userManagement.ShowMainMenu();
+            }
+        }
     }
-
 }
+
