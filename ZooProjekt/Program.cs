@@ -9,6 +9,15 @@ namespace ZooProjekt
             Application app = new Application();
             app.Run();
         }
+        
+        }
 
     }
+class Application
+{
+    public void Run()
+    {
+        // Placeholder for application loop
+    }
+
 }
