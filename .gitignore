@@ -1,0 +1,9 @@
+.vs
+zooklientserver/ZooClient/.vs
+zooklientserver/ZooClient/bin
+zooklientserver/ZooClient/obj
+zooklientserver/ZooServer/bin
+zooklientserver/ZooServer/.vs
+zooklientserver/ZooServer/obj
+/.vs
+/.idea

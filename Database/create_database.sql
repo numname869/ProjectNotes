@@ -1,0 +1,324 @@
+USE [master]
+GO
+/****** Object:  Database [AnimalCareDB]    Script Date: 11.01.2025 12:45:19 ******/
+CREATE DATABASE [AnimalCareDB]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'AnimalCareDB', FILENAME = N'F:\MSQL\MSSQL16.MSSQLSERVER\MSSQL\DATA\AnimalCareDB.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'AnimalCareDB_log', FILENAME = N'F:\MSQL\MSSQL16.MSSQLSERVER\MSSQL\DATA\AnimalCareDB_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB ) --change path if your MSQL server is somewhere else
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+GO
+ALTER DATABASE [AnimalCareDB] SET COMPATIBILITY_LEVEL = 160
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [AnimalCareDB].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [AnimalCareDB] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [AnimalCareDB] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [AnimalCareDB] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [AnimalCareDB] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [AnimalCareDB] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET RECOVERY FULL 
+GO
+ALTER DATABASE [AnimalCareDB] SET  MULTI_USER 
+GO
+ALTER DATABASE [AnimalCareDB] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [AnimalCareDB] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [AnimalCareDB] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [AnimalCareDB] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [AnimalCareDB] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [AnimalCareDB] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'AnimalCareDB', N'ON'
+GO
+ALTER DATABASE [AnimalCareDB] SET QUERY_STORE = ON
+GO
+ALTER DATABASE [AnimalCareDB] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 30), DATA_FLUSH_INTERVAL_SECONDS = 900, INTERVAL_LENGTH_MINUTES = 60, MAX_STORAGE_SIZE_MB = 1000, QUERY_CAPTURE_MODE = AUTO, SIZE_BASED_CLEANUP_MODE = AUTO, MAX_PLANS_PER_QUERY = 200, WAIT_STATS_CAPTURE_MODE = ON)
+GO
+USE [AnimalCareDB]
+GO
+/****** Object:  Table [dbo].[Diagnozy]    Script Date: 11.01.2025 12:45:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Diagnozy](
+	[IDDiagnozy] [int] NOT NULL,
+	[IDZwierzecia] [int] NULL,
+	[Opis_Diagnozy] [text] NULL,
+	[Waga] [float] NULL,
+	[Długość] [float] NULL,
+	[InnePomiary] [text] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IDDiagnozy] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[InspekcjeZagród]    Script Date: 11.01.2025 12:45:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[InspekcjeZagród](
+	[IDInspekcjiZagrody] [int] NOT NULL,
+	[IDZagrody] [int] NULL,
+	[IDObowiązku] [int] NULL,
+	[DataInspekcji] [datetime] NULL,
+	[WynikInspekcji] [varchar](255) NULL,
+	[Opis] [text] NULL,
+	[Zalecenia] [text] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IDInspekcjiZagrody] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[InspekcjeZdrowia]    Script Date: 11.01.2025 12:45:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[InspekcjeZdrowia](
+	[IDInspekcjiZdrowia] [int] NOT NULL,
+	[IDZwierzęcia] [int] NULL,
+	[IDObowiązku] [int] NULL,
+	[DataInspekcji] [datetime] NULL,
+	[WynikInspekcji] [varchar](255) NULL,
+	[Opis] [text] NULL,
+	[Zalecenia] [text] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IDInspekcjiZdrowia] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Karmienia]    Script Date: 11.01.2025 12:45:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Karmienia](
+	[IDKarmienia] [int] NOT NULL,
+	[IDZwierzęcia] [int] NULL,
+	[IDObowiązku] [int] NULL,
+	[DataKarmienia] [datetime] NULL,
+	[RodzajKarmy] [varchar](50) NULL,
+	[IlośćKarmy] [float] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IDKarmienia] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Konta]    Script Date: 11.01.2025 12:45:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Konta](
+	[IDKonta] [int] NOT NULL,
+	[IDPracownika] [int] NULL,
+	[TypKonta] [varchar](255) NULL,
+	[Login] [varchar](255) NULL,
+	[Hasło] [varchar](255) NULL,
+	[OstatnieLogowanie] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IDKonta] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Obowiązki]    Script Date: 11.01.2025 12:45:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Obowiązki](
+	[IDObowiązku] [int] NOT NULL,
+	[IDPracownika] [int] NULL,
+	[TypHistorii] [varchar](50) NULL,
+	[DataPoczątku] [datetime] NULL,
+	[DataZakończenia] [datetime] NULL,
+	[Okres] [int] NULL,
+	[Status] [varchar](20) NULL,
+	[Opis] [text] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IDObowiązku] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PomiaryBiometryczne]    Script Date: 11.01.2025 12:45:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PomiaryBiometryczne](
+	[IDPomiaru] [int] NOT NULL,
+	[IDInspekcjiZdrowia] [int] NULL,
+	[Temperatura] [float] NULL,
+	[Waga] [float] NULL,
+	[Długość] [float] NULL,
+	[InnePomiary] [text] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IDPomiaru] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Pracownicy]    Script Date: 11.01.2025 12:45:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Pracownicy](
+	[IDPracownika] [int] NOT NULL,
+	[Imię] [varchar](255) NULL,
+	[Nazwisko] [varchar](255) NULL,
+	[DataZatrudnienia] [datetime] NULL,
+	[DataZwolenienia] [datetime] NULL,
+	[Rola] [varchar](255) NULL,
+	[Email] [varchar](255) NULL,
+	[NumerTelefonu] [varchar](20) NULL,
+	[StatusZatrudnienia] [bit] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IDPracownika] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Zagrody]    Script Date: 11.01.2025 12:45:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Zagrody](
+	[IDZagrody] [int] NOT NULL,
+	[NazwaZagrody] [varchar](255) NULL,
+	[TypZagrody] [varchar](255) NULL,
+	[Wielkość] [float] NULL,
+	[Lokalizacja] [varchar](255) NULL,
+	[Pojemność] [int] NULL,
+	[Status] [varchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IDZagrody] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Zwierzęta]    Script Date: 11.01.2025 12:45:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Zwierzęta](
+	[IDZwierzęcia] [int] NOT NULL,
+	[IDZagrody] [int] NULL,
+	[Nazwa] [varchar](255) NULL,
+	[Gatunek] [varchar](255) NULL,
+	[Wiek] [int] NULL,
+	[Płeć] [varchar](50) NULL,
+	[DataPrzybycia] [datetime] NULL,
+	[Status] [varchar](255) NULL,
+	[Opis] [text] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IDZwierzęcia] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Diagnozy]  WITH CHECK ADD  CONSTRAINT [FK__diagnozy__IDZwie__5812160E] FOREIGN KEY([IDZwierzecia])
+REFERENCES [dbo].[Zwierzęta] ([IDZwierzęcia])
+GO
+ALTER TABLE [dbo].[Diagnozy] CHECK CONSTRAINT [FK__diagnozy__IDZwie__5812160E]
+GO
+ALTER TABLE [dbo].[InspekcjeZagród]  WITH CHECK ADD FOREIGN KEY([IDObowiązku])
+REFERENCES [dbo].[Obowiązki] ([IDObowiązku])
+GO
+ALTER TABLE [dbo].[InspekcjeZagród]  WITH CHECK ADD FOREIGN KEY([IDZagrody])
+REFERENCES [dbo].[Zagrody] ([IDZagrody])
+GO
+ALTER TABLE [dbo].[InspekcjeZdrowia]  WITH CHECK ADD FOREIGN KEY([IDObowiązku])
+REFERENCES [dbo].[Obowiązki] ([IDObowiązku])
+GO
+ALTER TABLE [dbo].[InspekcjeZdrowia]  WITH CHECK ADD  CONSTRAINT [FK__Inspekcje__IDZwi__5AEE82B9] FOREIGN KEY([IDZwierzęcia])
+REFERENCES [dbo].[Zwierzęta] ([IDZwierzęcia])
+GO
+ALTER TABLE [dbo].[InspekcjeZdrowia] CHECK CONSTRAINT [FK__Inspekcje__IDZwi__5AEE82B9]
+GO
+ALTER TABLE [dbo].[Karmienia]  WITH CHECK ADD FOREIGN KEY([IDObowiązku])
+REFERENCES [dbo].[Obowiązki] ([IDObowiązku])
+GO
+ALTER TABLE [dbo].[Karmienia]  WITH CHECK ADD  CONSTRAINT [FK__karmienia__IDZwi__5441852A] FOREIGN KEY([IDZwierzęcia])
+REFERENCES [dbo].[Zwierzęta] ([IDZwierzęcia])
+GO
+ALTER TABLE [dbo].[Karmienia] CHECK CONSTRAINT [FK__karmienia__IDZwi__5441852A]
+GO
+ALTER TABLE [dbo].[Konta]  WITH CHECK ADD  CONSTRAINT [FK_konta_Pracownicy] FOREIGN KEY([IDPracownika])
+REFERENCES [dbo].[Pracownicy] ([IDPracownika])
+GO
+ALTER TABLE [dbo].[Konta] CHECK CONSTRAINT [FK_konta_Pracownicy]
+GO
+ALTER TABLE [dbo].[Obowiązki]  WITH CHECK ADD FOREIGN KEY([IDPracownika])
+REFERENCES [dbo].[Pracownicy] ([IDPracownika])
+GO
+ALTER TABLE [dbo].[PomiaryBiometryczne]  WITH CHECK ADD FOREIGN KEY([IDInspekcjiZdrowia])
+REFERENCES [dbo].[InspekcjeZdrowia] ([IDInspekcjiZdrowia])
+GO
+ALTER TABLE [dbo].[Zwierzęta]  WITH CHECK ADD  CONSTRAINT [FK_Zwierzęta_Zagrody] FOREIGN KEY([IDZagrody])
+REFERENCES [dbo].[Zagrody] ([IDZagrody])
+GO
+ALTER TABLE [dbo].[Zwierzęta] CHECK CONSTRAINT [FK_Zwierzęta_Zagrody]
+GO
+USE [master]
+GO
+ALTER DATABASE [AnimalCareDB] SET  READ_WRITE 
+GO

@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZooProjekt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<<< HEAD:ZooProjekt/obj/Debug/net8.0/ZooProjekt.AssemblyInfo.cs
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+========
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+808085d4f292b4e21a9e93a635fca0111892a6b0")]
+>>>>>>>> origin/konta-test:ZooProjekt/obj/Release/net8.0/ZooProjekt.AssemblyInfo.cs
 [assembly: System.Reflection.AssemblyProductAttribute("ZooProjekt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZooProjekt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
