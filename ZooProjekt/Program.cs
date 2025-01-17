@@ -59,6 +59,11 @@ class Application
         {
             return loggedInUser != null;
         }
+        private void SeedData()
+        {
+            users.Add(new User { Username = "admin", Password = "admin", Role = "Administrator" });
+        }
+
     }
 
 }
