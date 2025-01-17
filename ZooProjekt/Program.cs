@@ -65,6 +65,27 @@ class Application
         }
 
     }
+    public void ShowLoginMenu()
+    {
+        Console.WriteLine("=== Login ===");
+        Console.Write("Enter username: ");
+        string username = Console.ReadLine();
+        Console.Write("Enter password: ");
+        string password = ReadPassword();
+
+        var user = users.FirstOrDefault(u => u.Username == username && u.Password == password);
+        if (user != null)
+        {
+            loggedInUser = user;
+            Console.WriteLine("Login successful!");
+        }
+        else
+        {
+            Console.WriteLine("Invalid username or password.");
+        }
+        WaitForUser();
+    }
+
 
 }
 
