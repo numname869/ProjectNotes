@@ -142,6 +142,11 @@ class Application
         return password;
     }
 
+    private void WaitForUser()
+    {
+        Console.WriteLine("Press Enter to continue...");
+        Console.ReadLine();
+    }
 
 }
 
