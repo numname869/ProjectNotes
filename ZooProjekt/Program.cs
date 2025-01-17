@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
 
 namespace ZooProjekt
 {
@@ -32,5 +35,31 @@ class Application
             }
         }
     }
+    class UserManagementFacade
+    {
+        private List<User> users = new List<User>();
+        private User loggedInUser = null;
+
+        public UserManagementFacade()
+        {
+            // Placeholder for initialization logic
+        }
+
+        public void ShowLoginMenu()
+        {
+            // Placeholder for login menu logic
+        }
+
+        public void ShowMainMenu()
+        {
+            // Placeholder for main menu logic
+        }
+
+        public bool IsUserLoggedIn()
+        {
+            return loggedInUser != null;
+        }
+    }
+
 }
 
