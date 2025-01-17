@@ -84,6 +84,37 @@ class Application
             Console.WriteLine("Invalid username or password.");
         }
         WaitForUser();
+
+    }
+    public void ShowMainMenu()
+    {
+        Console.WriteLine($"Welcome, {loggedInUser.Username} ({loggedInUser.Role})!");
+        Console.WriteLine("=== Animal Rehabilitation Management System ===");
+        Console.WriteLine("1. Manage Users");
+        Console.WriteLine("2. Logout");
+        Console.Write("Choose an option: ");
+        var key = Console.ReadKey();
+
+        switch (key.Key)
+        {
+            case ConsoleKey.D1:
+                ManageUsers();
+                break;
+            case ConsoleKey.D2:
+                loggedInUser = null;
+                break;
+            default:
+                Console.WriteLine("Invalid option. Try again.");
+                WaitForUser();
+                break;
+        }
+
+    }
+    private void ManageUsers()
+    {
+        // Functionality placeholder for managing users
+        Console.WriteLine("\n=== User Management ===");
+        WaitForUser();
     }
 
 
