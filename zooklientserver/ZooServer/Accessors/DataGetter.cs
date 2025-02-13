@@ -66,13 +66,14 @@ namespace ZooServer.Accessors {
     }
 
 
-
-    internal class Testing {
-        static void Main(string[] args) {
-            AnimalCareContext db = new AnimalCareContext();
-            DataGetter test = new DataGetter(db);
-            db.Zwierzęta.
-
+    public class Testing
+    {
+        public static void Main(string[] args)
+        {
+            dbcontext.EnsureCreated();
         }
     }
+
 }
+    
+

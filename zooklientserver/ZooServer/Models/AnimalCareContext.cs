@@ -4,6 +4,10 @@ namespace ZooServer.Models
 {
     public class AnimalCareContext : DbContext
     {
+        public AnimalCareContext(DbContextOptions options) : base(options)
+        {
+        }
+
         public DbSet<Diagnozy> Diagnozy { get; set; }
         public DbSet<InspekcjeZagród> InspekcjeZagród { get; set; }
         public DbSet<InspekcjeZdrowia> InspekcjeZdrowia { get; set; }
