@@ -70,7 +70,7 @@ namespace ZooServer.Accessors {
     {
         public static void Main(string[] args)
         {
-            dbcontext.EnsureCreated();
+           
         }
     }
 
